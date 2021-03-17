@@ -1,5 +1,3 @@
-# cacti
-
 ## Wprowadzenie
 
 Zadanie będzie polegało na zaimplementowaniu pewnej wersji wzorca aktorów. Aktory to mechanizm przetwarzania pozwalający na wielowątkowe wykonywanie zestawu zadań w ramach jednego programu. Aktor to byt, który przyjmuje komunikaty z pewnego zestawu. Przyjęcie komunikatu danego rodzaju wiąże się z wykonaniem pewnego obliczenia imperatywnego, które może mieć efekty uboczne, np. polegające na przekształceniu jakiejś globalnej struktury danych, ale też na utworzeniu nowych aktorów i wysłaniu do jakichś istiejących aktorów komunikatów. Komunikaty wysyłane w tym systemie mają charakter asynchroniczny. W obecnym zadaniu praca aktorów jest wykonywana przez wątki robocze (ang. worker threads) z określonej puli.
@@ -148,7 +146,7 @@ powinno spowodować pojawienie się na wyjściu
 ## Wymagania techniczne
 
 Do synchronizacji można korzystać tylko z mechanizmów biblioteki pthreads. Można korzystać z plików nagłówkowych:
-
+```
 #include <pthread.h>
 #include <semaphore.h>
 #include <stddef.h>
@@ -160,7 +158,7 @@ Do synchronizacji można korzystać tylko z mechanizmów biblioteki pthreads. Mo
 #include <signal.h>
 #include <errno.h>
 #include <unistd.h>
-
+```
 Powyższa lista może ulec rozszerzeniu, jeśli okaże się to konieczne. Można założyć, że kod będzie kompilowany i testowany na serwerze students, co nie oznacza, że błędy znalezione na innych systemach nie wpłyną na ocenę.
 
 Jako rozwiązanie należy wysłać na moodla plik ab123456.tar.gz, gdzie ab123456 to login na students. W archiwum powinien znaleźć się jeden katalog o nazwie ab123456 (login na students) z wszystkimi plikami rozwiązania. Kod programów przykładowych należy umieścić w plikach macierz.c i silnia.c. Nie powinna być konieczna modyfikacja plików CMakeLists.txt. Ciąg poleceń:
